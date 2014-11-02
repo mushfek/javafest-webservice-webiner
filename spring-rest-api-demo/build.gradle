@@ -1,0 +1,69 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+
+        maven {
+            url "http://download.java.net/maven/2"
+        }
+
+        maven {
+            url "http://repo.spring.io/libs-release"
+        }
+
+        maven {
+            url 'http://repo.spring.io/plugins-release'
+        }
+    }
+
+    dependencies {
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.5'
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        url "http://download.java.net/maven/2"
+    }
+
+    maven {
+        url "http://repo.spring.io/libs-release"
+    }
+
+    maven {
+        url 'http://repo.spring.io/plugins-release'
+    }
+}
+
+dependencies {
+    compile 'org.springframework:spring-core:4.0.5.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.0.5.RELEASE'
+
+    compile 'org.codehaus.jackson:jackson-core-asl:1.9.13'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+
+    compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+    compile group: 'commons-io', name: 'commons-io', version: '1.4'
+    compile group: 'org.apache.commons', name: 'commons-math', version: '2.2'
+
+    compile 'commons-lang:commons-lang:2.6'
+
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    runtime 'org.slf4j:slf4j-log4j12:1.7.5'
+
+    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
