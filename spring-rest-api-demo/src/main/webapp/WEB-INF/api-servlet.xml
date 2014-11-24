@@ -14,4 +14,10 @@
 
     <mvc:annotation-driven/>
 
+    <!-- Here max upload and memory allocation size is defined in bytes (I used 102400000 bytes (100 MB) -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="102400000"/>
+        <property name="maxInMemorySize" value="102400000"/>
+    </bean>
+
 </beans>

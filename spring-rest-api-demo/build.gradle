@@ -55,6 +55,7 @@ dependencies {
     compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
     compile group: 'commons-io', name: 'commons-io', version: '1.4'
     compile group: 'org.apache.commons', name: 'commons-math', version: '2.2'
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.2.1'
 
     compile 'commons-lang:commons-lang:2.6'
 
