@@ -57,7 +57,7 @@ public class MovieController {
      * Uploads a trailer video file (e.g. size < 100 MB)
      *
      * @param id ID of the file to be uploaded (should be unique)
-     * @return
+     * @return An empty JSON object
      * @throws Exception
      */
     @RequestMapping(value = "/movies/trailers", method = RequestMethod.POST)
